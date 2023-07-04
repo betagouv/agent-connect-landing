@@ -1,77 +1,52 @@
 <script type="text/javascript" src="/js/checkEmail.js"></script>
-<div class="fr-background-alt--blue-france fr-p-2w fr-p-md-8w">
-    <div id="eligibility_check" class="fr-container--fluid fr-background-default--grey">
-        <div class="fr-grid-row fr-grid-row--middle">
-            <div class="fr-content-media__img fr-col-2 fr-col-offset-1 fr-hidden fr-unhidden-md">
-                <img class="fr-responsive-img" aria-hidden="true" src="/pictograms/illu-3D-agent.png" alt="" />
-            </div>
-            <div id="eligibility-content" class="fr-col-md-8 fr-p-4w">
-                <div class="fr-toggle">
-                    <input type="checkbox" class="fr-toggle__input" aria-describedby="toggle-698-hint-text" id="toggle-698">
-                    <label class="fr-toggle__label" for="toggle-698" data-fr-checked-label="Éligible" data-fr-unchecked-label="Pas éligible"></label>
-                    <p class="fr-hint-text" id="toggle-698-hint-text">INTERRUPTEUR DE TEST POUR LES DEMOS</p>
+    <div class="fr-container fr-my-8w">
+        <div class="fr-callout fr-background-default--grey shade">
+            <div class="fr-grid-row fr-grid-row--middle">
+                <div class="fr-content-media__img fr-col-2 fr-hidden fr-unhidden-md">
+                    <img class="fr-responsive-img" aria-hidden="true" src="/pictograms/illu-3D-agent.png" alt="" />
                 </div>
-                <h2>Testez votre égibilité&nbsp;!</h2>
-                <p>Les services disponibles s'enrichissent régulièrement en fonction de votre administration.</p>
-                <div class="fr-input-group ">
-                    <!-- fr-input-group--error -->
-                    <label class="fr-label" for="emailValue">
-                        Votre adresse email professionnelle
-                        <span class="fr-hint-text">Format attendu&nbsp;: nom@domaine.fr</span>
-                    </label>
-                    <div class="fr-container--fluid">
-                        <div class="fr-grid-row fr-grid-row--middle">
-                            <!-- fr-input--error -->
-                            <input class="fr-input fr-col-sm-12 fr-col-md-9" name="email" autocomplete="email" id="emailValue" type="email">
-                            <button class="fr-btn text-centered" id="checkEmail" type="submit">
-                                Valider
-                            </button>
-                            <!-- <p id="text-input-error-desc-error" class="fr-error-text">
-                                Texte d’erreur obligatoire
-                            </p> -->
-                        </div>
-                        
+                <div class="fr-col-md-8 fr-col-offset-1">
+                    <div id="eligibilityCheck">
+                        <h2 class="fr-callout__title">Testez votre égibilité&nbsp;!</h2>
+                        <p class="fr-callout__text">
+                            Vous êtes membre de la fonction publique d'État ou d'un opérateur de l'État ? 
+                        </p>
+                        <fieldset class="fr-fieldset fr-mt-3w" id="radio-inline" aria-labelledby="radio-inline-legend radio-inline-messages">
+                            <div class="fr-fieldset__element fr-fieldset__element--inline">
+                                <div class="fr-radio-group">
+                                    <input type="radio" id="radio-inline-1" name="radio-inline" value="yes">
+                                    <label class="fr-label" for="radio-inline-1">
+                                        Oui
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fr-fieldset__element fr-fieldset__element--inline fr-col-offset-4">
+                                <div class="fr-radio-group">
+                                    <input type="radio" id="radio-inline-3" name="radio-inline" value="no">
+                                    <label class="fr-label" for="radio-inline-3">
+                                        Non
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fr-messages-group" id="radio-inline-messages" aria-live="assertive">
+                            </div>
+                        </fieldset>
                     </div>
+
+                    <div class="fr-select-group js-eligibility-hidden" id="eligible">
+                        <label class="fr-label" for="select">
+                          Ministères et opérateurs rattachés à AgentConnect
+                        </label>
+                        <select class="fr-select" id="select" name="select">
+                          <option value="" selected disabled hidden>Selectionnez une option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                          <option value="4">Option 4</option>
+                        </select>
+                    </div>
+                    <p class="js-eligibility-hidden" id="notEligible">AgentConnect n'est actuellement disponible que pour les membres de la fonction publique</p>
                 </div>
-            </div>
-            <p id="fillYourEmail" class="js-eligibility-hidden fr-error-text fr-pl-4w fr-col-offset-3 fr-mt-n3w">Merci de renseigner votre email ✉️</p>
+            </div>  
         </div>
     </div>
-
-    <div id="eligibility-wrapper" class="fr-container fr-background-default--grey js-eligibility-hidden">
-        <div id="notEligible" class="fr-grid-row fr-grid-row--middle">
-            <div class="fr-content-media__img fr-col-2 fr-col-offset-1 fr-hidden fr-unhidden-md">
-                <img class="fr-responsive-img" aria-hidden="true" src="/pictograms/patience.svg" alt="" />
-            </div>
-            <div class="fr-col-md-8 fr-p-4w">
-                <h2>Encore un peu de patience&nbsp;!</h2>
-                <p>Votre administration n'utilise pas encore le bouton AgentConnect. Nous pouvons vous tenir au courant de sa mise en place.</p>
-                <div class="fr-input-group">
-                    <label class="fr-label" for="email-1">
-                        Votre adresse email professionnelle
-                        <span class="fr-hint-text">Format attendu&nbsp;: nom@domaine.fr</span>
-                    </label>
-                    <div class="fr-container--fluid">
-                        <div class="fr-grid-row fr-grid-row--middle">
-                            <input class="fr-input fr-col-sm-12 fr-col-md-9" name="email" autocomplete="on" id="email-1" type="email">
-                            <button class="fr-btn text-centered">
-                                S'inscrire
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="eligible" class="fr-grid-row fr-grid-row--middle js-eligibility-hidden">
-            <div class="fr-content-media__img fr-p-2w fr-col-2 fr-col-offset-1 fr-hidden fr-unhidden-md">
-                <img class="fr-responsive-img" aria-hidden="true" src="/pictograms/patience.svg" alt="" />
-            </div>
-            <div class="fr-col-md-8 fr-p-4w">
-                <h2>Vous êtes éligible&nbsp;! </h2>
-                <p>Vous pouvez dès à présent vous connecter à tous vos outils professionnels grâce à AgentConnect.</p>
-            </div>
-        </div>
-    </div>
-
-</div>
